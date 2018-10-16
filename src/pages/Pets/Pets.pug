@@ -1,0 +1,22 @@
+div
+  section.pets
+    .container
+      .pets__title.title
+        |Our friends who
+        br
+        |are looking for a house
+      .pets__container
+        ul.pets__list
+            li.slider__item(v-for="(item, i) in currentItems", :key="i")
+              img.slider__img(:src="item.img")
+              .slider__name {{ item.name }}
+              .slider__btn.btn(@click="showModal(item)") Learn More
+
+        .pets__pagination.pagination(@page-changed='fetchPage')
+          ul.pagination__list(ref="pagination", @click="setActiveClass($event)")
+            li.pagination__item(v-if='hasFirst()', @click.prevent='changePage(1)')  1
+            li.pagination__item--noborder(v-if='hasFirst()') ...
+            li.pagination__item(v-for="(page, i) in pagesArray", @click.prevent='changePage(page)') {{ page }}
+            li.pagination__item--noborder(v-if='hasLast()') ...
+            li.pagination__item(v-if='hasLast()', @click.prevent='changePage(totalPages)') {{ totalPages }}
+        Modal(v-if="show", :item="item", @close="show=!show")

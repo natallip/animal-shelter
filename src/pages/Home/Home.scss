@@ -1,0 +1,371 @@
+@import '../../assets/sass/vars';
+@import '../../assets/sass/mixins';
+.top {
+  position: relative;
+  height: 100vh;
+  background-image: url('../../assets/img/content/dog-top.png'), radial-gradient(130% 100% at 0px 0px, #3d3028, #1b1b1d);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  @include desktop {
+    background-position: 150% 100%;
+  }
+  @include laptop {
+    background-image: radial-gradient(130% 100% at 0px 0px, #3d3028, #1b1b1d);
+  }
+}
+.top .btn--accent:hover {
+  color: #fff;
+}
+.top__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @include laptop {
+    align-items: center;
+    padding: 0 5%;
+  }
+}
+.top__title {
+  font-family: "Times New Roman", serif;
+  font-size: 44px;
+  letter-spacing: 4px;
+  line-height: 56px;
+  color: #fff;
+  width: 30%;
+  margin-bottom: 30px;
+  @include laptop {
+    width: 100%;
+    letter-spacing: 2px;
+  }
+  @include tablets {
+    font-size: 36px;
+    letter-spacing: 0;
+  }
+}
+.top__text {
+  color: #cdcdcd;
+  width: 40%;
+  margin-bottom: 40px;
+  @include desktop {
+    width: 30%;
+  }
+  @include laptop {
+    width: 100%;
+  }
+}
+.about {
+  background-color: #fafafa;
+  padding-top: 114px;
+  margin-bottom: 88px;
+  @include laptop {
+    padding-top: 74px;
+    margin-bottom: 66px;
+  }
+  @include tablets {
+    padding-top: 50px;
+    margin-bottom: 30px;
+  }
+}
+.about__wrap {
+  background: #fafafa url('../../assets/img/content/pets.png') no-repeat 20% 50%/contain;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: left;
+  padding-right: 13%;
+  @include laptop {
+    background: #fafafa;
+    align-items: center;
+    padding-right: 0;
+  }
+}
+.about__title {
+  width: 42%;
+  margin-bottom: 14px;
+  @include laptop {
+    text-align: center;
+    width: 80%;
+  }
+  @include laptop {
+    margin-bottom: 4px;
+  }
+}
+.about__text {
+  width: 42%;
+  @include laptop {
+    width: 80%;
+  }
+}
+.about__p {
+  margin-bottom: 24px;
+}
+.pets {
+  background: #f6f6f6;
+  padding-top: 70px;
+  @include tablets {
+    padding-top: 50px;
+  }
+}
+.pets__title {
+  text-align: center;
+  margin-bottom: 60px;
+  @include tablets {
+    margin-bottom: 30px;
+  }
+}
+.pets__slider {
+  margin-bottom: 74px;
+  position: relative;
+  @include laptop {
+    margin-bottom: 30px;
+  }
+}
+.slider {
+  width: 970px;
+  height: 430px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  @include laptop {
+    width: 555px;
+  }
+  @include tablets {
+    width: 200px;
+    height: 360px;
+  }
+}
+.slider__list {
+  position: absolute;
+  display: flex;
+}
+.slider__item {
+  margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 9px;
+  overflow: hidden;
+  padding-bottom: 40px;
+  @include laptop {
+    margin: 0 15px;
+  }
+  @include tablets {
+    margin: 0 5px;
+  }
+}
+.slider__item:hover {
+  box-shadow: 0px 2px 30.1px 4.9px rgba(13, 13, 13, 0.04);
+}
+.slider__img {
+  width: 270px;
+  height: 270px;
+  margin-bottom: 20px;
+  @include laptop {
+    width: 250px;
+    height: 250px;
+  }
+  @include tablets {
+    width: 190px;
+    height: 190px;
+  }
+}
+.slider__name {
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: $title-color;
+  margin-bottom: 15px;
+}
+.pets__btn-all {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 66px;
+}
+.slider__contrs {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+}
+.slider__contr {
+  border: 2px solid $accent;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.slider__contr:hover {
+  background-color: $accent;
+}
+.slider__arrow {
+  width: 15px;
+}
+.slider__contr--prev {
+  left: 0;
+  @include laptop {
+    left: 60px;
+  }
+  @include tablets {
+    left: 72px;
+  }
+}
+.slider__contr--next {
+  right: 0;
+  @include laptop {
+    right: 60px;
+  }
+  @include tablets {
+    right: 72px;
+  }
+  .slider__arrow  {
+    transform: rotate(180deg);
+  }
+}
+.help {
+  background: #fafafa;
+  padding-top: 66px;
+  @include tablets {
+    padding-top: 50px;
+  }
+}
+.help__title {
+  text-align: center;
+  margin-bottom: 74px;
+  @include laptop {
+    margin-bottom: 50px;
+  }
+  @include tablets {
+    margin-bottom: 30px;
+  }
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list__item {
+  margin: 0 60px 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include laptop {
+    margin: 0 40px 30px;
+  }
+  @include tablets {
+    margin: 0 20px 30px;
+  }
+}
+.list__icon {
+  width: 55px;
+  height: 55px;
+  fill: $accent;
+  margin-bottom: 22px;
+  @include tablets {
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+  }
+}
+.list__text {
+  font-family: "Times New Roman", sefif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: $title-color;
+  @include tablets {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}
+.donation {
+  padding-top: 66px;
+  padding-bottom: 80px;
+  background: #f6f6f6;
+  @include tablets {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+}
+.donation__wrap {
+  background: #f6f6f6 url('../../assets/img/content/dog.png') no-repeat 0% 50%/contain;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: left;
+  padding-right: 13%;
+  @include laptop {
+    background: #f6f6f6;
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+.donation__title {
+  width: 42%;
+  margin-bottom: 18px;
+  @include laptop {
+    width: 80%;
+    text-align: center;
+  }
+  @include tablets {
+    width: 90%;
+  }
+}
+.donation__text {
+  width: 42%;
+  @include laptop {
+    width: 80%;
+  }
+  @include tablets {
+    width: 100%;
+  }
+}
+.donation__text-bank {
+  font-family: "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: $title-color;
+  margin-bottom: 10px;
+}
+.donation__text-card {
+  display: inline-flex;
+  border-radius: 9px;
+  background: $accent;
+  align-items: center;
+  padding: 7px 20px 7px 5px;
+  @include tablets {
+    padding-right: 5px;
+    padding-left: 0;
+  }
+}
+.donation__card {
+  width: 50px;
+  height: 30px;
+}
+.donation__numbers {
+  font-family: "Times New Roman", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #292929;
+  @include tablets {
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+}
+.donation__text-rest {
+  font-style: italic;
+  font-size: 12px;
+  color: #b2b2b2;
+  margin-top: 30px;
+  @include tablets {
+    margin-top: 20px;
+  }
+}

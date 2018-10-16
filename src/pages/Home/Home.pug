@@ -1,0 +1,63 @@
+div
+  section.top
+    .container.top__wrap
+      .top__title Not only people  need a house
+      .top__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida est in porttitor  porttitor. Duis sodales elementum ipsum, vehicula condimentum erat fringilla et.
+      router-link.top__btn.btn.btn--accent(tag="div", to="/pets") Make a friend
+  section.about
+    .container.about__wrap
+      .about__title.title
+        |About the shelter
+        br
+        |“Cozy House”
+      .about__text
+        p.about__p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur blandit condimentum. Proin accumsan lorem vel gravida fringilla. Suspendisse potenti. Mauris ut pulvinar nunc.
+
+        p.about__p Donec consectetur, diam in porta tempus, urna ligula vestibulum nibh, ac ornare felis justo nec leo. Praesent mattis nibh quis ultrices pharetra. Morbi tempus at ante sit amet tristique. Maecenas dignissim justo orci, in laoreet urna dapibus nec. Praesent quis tortor faucibus, tristique ante vitae, dignissim lorem. Sed at ligula et sem mattis gravida ac vel erat.
+  section.pets
+    .container
+      .pets__title.title
+        |Our friends who
+        br
+        |are looking for a house
+      .pets__slider
+        .slider
+          ul.slider__list(ref="slider")
+            li.slider__item(v-for="(item, i) in pets", :key="i")
+              img.slider__img(:src="item.img")
+              .slider__name {{ item.name }}
+              .slider__btn.btn(@click="showModal(item)") Learn More
+
+      .slider__contrs.container
+        .slider__contr.slider__contr--prev(@click="moveSlider('prev')")
+          img.slider__arrow(src="../../assets/img/icons/left-arrow.svg")
+        .slider__contr.slider__contr--next(@click="moveSlider('next')")
+          img.slider__arrow(src="../../assets/img/icons/left-arrow.svg")
+      Modal(v-if="show", :item="item", @close="show=!show")
+      .pets__btn-all
+        router-link.btn.btn--accent(tag="div", to="/pets") Get to know the rest
+  section.help
+    .container
+      .help__title.title
+        |Than you can help
+        br
+        |our shelter
+      .help__list
+        ul.list
+          li.list__item(v-for="(item, i) in array", :key="i")
+            img.list__icon(:src="`./static/img/icons/${item.icon}.svg`")
+            .list__text {{ item.text }}
+
+  section.donation
+    .container.donation__wrap
+      .donation__title.title
+        |In addition, you
+        br
+        |can make a donation
+      .donation__text
+        .donation__text-bank Name of the bank / Type of bank account
+        .donation__text-card
+          img.donation__card(src="../../assets/img/icons/credit-card.svg")
+          .donation__numbers 8380 2880 8028 8791 7435
+        .donation__text-rest
+          | Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.
