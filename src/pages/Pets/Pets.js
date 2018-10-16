@@ -47,6 +47,7 @@ export default {
   },
   mounted () {
     this.changePage(1);
+
   },
   methods: {
     setActiveClass (e) {
@@ -75,7 +76,6 @@ export default {
     },
     changePage (i) {
       this.currentPage = i;
-      //this.$emit('page-changed', i);
       this.currentItems = this.pages[i - 1];
     },
     chankPage (arr, chunk) {
