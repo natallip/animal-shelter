@@ -6,7 +6,7 @@
           .logo__text-accent Cozy House
           .logo__text Shelter for pets in Boston
 
-      ul.header__menu.menu(ref="menu")
+      ul.header__menu.menu(ref="menu", @click="toggleMenu")
         router-link.menu__item(tag="li", :to="item.href", v-for="(item, i) in nav", :key="i", :active-class="'menu__item--active'" exact) {{ item.name }}
 
     .header__hamburger.container
