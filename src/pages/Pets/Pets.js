@@ -47,7 +47,8 @@ export default {
   },
   mounted () {
     this.changePage(1);
-
+    let paginationItem = this.$refs.pagination.children[0]
+    paginationItem.classList.add('pagination__item--active')
   },
   methods: {
     setActiveClass (e) {

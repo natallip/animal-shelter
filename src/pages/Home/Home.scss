@@ -229,6 +229,11 @@
     transform: rotate(180deg);
   }
 }
+.slider__btn.btn{
+  @include tablets {
+    padding: 10px 25px;
+  }
+}
 .help {
   background: #fafafa;
   padding-top: 66px;
